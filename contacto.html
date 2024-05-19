@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Solutions</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            text-align: center;
+            background-color: #f2f2f2;
+            padding: 20px 0;
+        }
+        h1 {
+            color: #0047ab; /* Color azul oscuro */
+        }
+        nav ul {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+        nav ul a {
+            text-decoration: none;
+            color: #333;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        nav ul a:hover {
+            color: #fff;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        }
+        main {
+            text-align: center;
+            padding: 20px 0;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .servicio {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+        .servicio img {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+        .servicio h3 {
+            color: #333;
+        }
+        .servicio p {
+            color: #666;
+            margin: 0;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>QS: Tu Solución Informática Integral</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="equipos.html">Equipos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <!-- Contenido de la página de inicio -->
+    <main>
+      <main>
+        <section id="banner">
+            <h2>Tu socio confiable en soluciones informáticas</h2>
+            <p>Ofrecemos servicios de reparación, mantenimiento y consultoría informática para satisfacer tus necesidades.</p>
+            <a href="servicios.html" class="btn">Explora nuestros servicios</a>
+        </section>
+    <main>
+       <section id="contacto">
+            <h2>Contáctanos</h2>
+            <form id="contactForm">
+                <p>
+                    <label for="nombre">Nombre:</label><br>
+                    <input type="text" id="nombre" name="nombre" required>
+                </p>
+
+                <p>
+                    <label for="email">Correo electrónico:</label><br>
+                    <input type="email" id="email" name="email" required>
+                </p>
+
+                <p>
+                    <label for="telefono">Teléfono (con WhatsApp):</label><br>
+                    <input type="tel" id="telefono" name="telefono" required pattern="^\+[0-9]{1,3}[0-9]{6,12}$" title="Por favor, ingrese un número de teléfono válido con el prefijo internacional y sin espacios ni guiones">
+                </p>
+
+                <p>
+                    <label for="servicio">Servicio o equipo requerido:</label><br>
+                    <select id="servicio" name="servicio" required>
+                        <option value="">Seleccione un servicio o equipo</option>
+                        <option value="Reparación y mantenimiento de ordenadores">Reparación y mantenimiento de ordenadores</option>
+                        <option value="Instalación y configuración de redes">Instalación y configuración de redes</option>
+                        <option value="Soporte técnico remoto">Soporte técnico remoto</option>
+                        <option value="Consultoría informática">Consultoría informática</option>
+                        <option value="Soporte y mantenimiento de computadoras">Soporte y mantenimiento de computadoras</option>
+                        <option value="Ordenadores de sobremesa y portátiles">Ordenadores de sobremesa y portátiles</option>
+                        <option value="Tabletas">Tabletas</option>
+                        <option value="Smartphones">Smartphones</option>
+                        <option value="Impresoras">Impresoras</option>
+                        <option value="Routers">Routers</option>
+                        <option value="Software">Software</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="mensaje">Mensaje:</label><br>
+                    <textarea id="mensaje" name="mensaje" required></textarea>
+                </p>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evitar el envío del formulario
+
+            // Obtener los valores del formulario
+            var nombre = document.getElementById("nombre").value;
+            var email = document.getElementById("email").value;
+            var telefono = document.getElementById("telefono").value;
+            var servicio = document.getElementById("servicio").value;
+            var mensaje = document.getElementById("mensaje").value;
+
+            // Crear el enlace de WhatsApp con el número de teléfono
+            var enlaceWhatsApp = "https://wa.me/" + telefono.replace(/\D/g, '');
+
+            // Crear el cuerpo del correo electrónico
+            var cuerpoCorreo = "Nombre: " + nombre + "\n";
+            cuerpoCorreo += "Correo electrónico: " + email + "\n";
+            cuerpoCorreo += "Teléfono: " + telefono + "\n";
+            cuerpoCorreo += "Servicio o equipo requerido: " + servicio + "\n";
+            cuerpoCorreo += "Mensaje: " + mensaje + "\n\n";
+            cuerpoCorreo += "Enlace de WhatsApp: " + enlaceWhatsApp;
+
+            // Abrir el cliente de correo predeterminado del usuario con los datos del correo electrónico prellenados
+            window.location.href = "mailto:andreseubanks@gmail.com?subject=Solicitud de servicio informático&body=" + encodeURIComponent(cuerpoCorreo);
+        });
+    </script>
+	</center>
+    </main>
+
+<br>
+    <footer>
+	<p>Tu Solución Informática Integral</p>
+        <p>&copy; 2024</p>
+        <ul>
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+    </footer>
+</body>
+</html>
